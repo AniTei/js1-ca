@@ -1,5 +1,11 @@
+
+
+
+
 body {
     background-color: rgb(168, 237, 214);
+/*     when in doubt use Caslon
+ */
 }
 
 h1, h2{
@@ -22,8 +28,6 @@ header{
     position: sticky;
     top: 0px;
 }
-
-
 
 nav {
     background-color: rgb(229, 252, 245);
@@ -54,12 +58,12 @@ nav a:hover {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding: 5em;
 
 }
 .user-item-index {
-    padding: 2em;
-    background-color: white;
-
+    padding: 4em;
+    background-color: rgb(229, 252, 245);
 }
 
 .user-img-index {
@@ -72,4 +76,3 @@ nav a:hover {
 }
 
 
-when in doubt use Caslon

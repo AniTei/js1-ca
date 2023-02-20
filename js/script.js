@@ -2,7 +2,6 @@ const contentDiv = document.querySelector(".content-container");
 
 
 // files successfully connected
-
 // call API
 
 const url = "https://randomuser.me/api/?results=12";
@@ -14,35 +13,37 @@ async function getSomeContent() {
 
         console.log(data.results);
 
+        contentDiv.innerHTML = "Finding random users..."
+        // how to empty loading
+        
+        contentDiv.innerHTML = "";
+            //how to empty loading
 
         //loop needed for data.results[i]
+        for (let i = 0; i < data.results.length; i++) {
 
-        contentDiv.innerHTML =  `<a href="details.html"> <div class="user-item-index">
-                                <img class="user-img-index"src="${data.results[5].picture.large}" alt="user">
-                                <div class="username-index"> @${data.results[5].login.username}</div>
-                                <div class="fullname-index"> ${data.results[5].name.first} ${data.results[5].name.last}</div> 
-                                </div></a>
+            console.log(data.results[i])
 
-                                <a href="details.html"> <div class="user-item-index"> <p>test 2</p>
-                                <img class="user-img-index"src="${data.results[5].picture.large}" alt="user">
-                                <div class="username-index"> @${data.results[5].login.username}</div>
-                                <div class="fullname-index"> ${data.results[5].name.first} ${data.results[5].name.last}</div> 
-                                </div></a>
+            
 
-                                <a href="details.html"> <div class="user-item-index"> <p>test 3</p>
-                                <img class="user-img-index"src="${data.results[5].picture.large}" alt="user">
-                                <div class="username-index"> @${data.results[5].login.username}</div>
-                                <div class="fullname-index"> ${data.results[5].name.first} ${data.results[5].name.last}</div> 
-                                </div></a>
-                                
-                                `;
+            contentDiv.innerHTML += `<a href="details.html"> 
+                                    <div class="user-item-index">
+                                        <img class="user-img-index"src="${data.results[i].picture.large}" alt="user">
+                                         <div class="username-index"> @${data.results[i].login.username}</div>
+                                        <div class="fullname-index"> ${data.results[i].name.first} ${data.results[i].name.last}</div> 
+                                    </div>
+                                </a>`;
+        }
+
         //displaying username, name and 
         //displayContent(data);
 
-
     }
     catch (error) {
-        console.log("OOOPSIE:", error);
+        console.log("OOOPSIE:/sjekk internettforbindelse!!!", error);
+
+        contentDiv.innerHTML = `OOOPSIE, something went wrong`
+
     }
 }
 getSomeContent();
