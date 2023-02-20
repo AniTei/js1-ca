@@ -24,8 +24,6 @@ async function getSomeContent() {
 
             console.log(data.results[i])
 
-            
-
             contentDiv.innerHTML += `<a href="details.html"> 
                                     <div class="user-item-index">
                                         <img class="user-img-index"src="${data.results[i].picture.large}" alt="user">
@@ -42,7 +40,7 @@ async function getSomeContent() {
     catch (error) {
         console.log("OOOPSIE:/sjekk internettforbindelse!!!", error);
 
-        contentDiv.innerHTML = `OOOPSIE, something went wrong`
+        contentDiv.innerHTML = `<div class="error">OH NO, something went wrong 😢</div>`;
 
     }
 }
