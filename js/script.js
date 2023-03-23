@@ -11,7 +11,7 @@ async function getSomeContent() {
         const respond = await fetch(url);
         const data = await respond.json();
 
-        console.log(data.results);
+        console.log(data);
 
         contentDiv.innerHTML = "Finding random users..."
         // how to empty loading
@@ -28,7 +28,8 @@ async function getSomeContent() {
                                     <div class="user-item-index">
                                         <img class="user-img-index"src="${data.results[i].picture.large}" alt="user">
                                          <div class="username-index"> @${data.results[i].login.username}</div>
-                                        <div class="fullname-index"> ${data.results[i].name.first} ${data.results[i].name.last}</div> 
+                                        <div class="fullname-index"> ${data.results[i].name.first} ${data.results[i].name.last}</div>
+                                        <div> check for seed:${data.info.seed} </div> //+loop
                                     </div>
                                 </a>`;
         }
